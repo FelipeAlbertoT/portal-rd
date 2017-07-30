@@ -1,3 +1,6 @@
+//var userTrackerURL = "http://localhost:3000/api/v1/users";
+var userTrackerURL = "https://serene-temple-33600.herokuapp.com/api/v1/users";
+
 function sendVisitedPagesToUserTrackerApplication() {
   var user_name = "";
   var user_email = "";
@@ -12,7 +15,7 @@ function sendVisitedPagesToUserTrackerApplication() {
   $.ajax({
       type: "POST",
       data :JSON.stringify(user),
-      url: "http://localhost:3000/api/v1/users",
+      url: userTrackerURL,
       contentType: "application/json"
   }).done(function(data) {
     localStorage.setItem('user', JSON.stringify(data));
@@ -28,7 +31,7 @@ beforeSubmit = function(){
   $.ajax({ 
      type: "POST",
      data :JSON.stringify(user),
-     url: "http://localhost:3000/api/v1/users",
+     url: userTrackerURL,
      contentType: "application/json",
      success: function(data) {
        localStorage.setItem('user', JSON.stringify(data));
