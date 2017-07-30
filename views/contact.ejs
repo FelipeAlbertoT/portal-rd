@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ./partials/head %>
+  </head>
+  <body class="container">
+    <header>
+      <% include ./partials/header %>
+    </header>
+    
+    <main>
+      <div class="row">
+        <div class="col-sm-12">
+
+          <div class="jumbotron">
+            <h1>Entre em contato</h1>
+            <% if(locals.notice){ %>
+            <p id="notice"><%= notice %></p>
+            <% } %>
+            <div>
+               <form name="contactForm" id="contactForm" enctype="multipart/form-data" 
+                   action="/contact" method="post">
+                 <div class="form-group">
+                   <label for="email">Email:</label>
+                   <input type="email" class="form-control" id="email" name="email">
+                 </div>
+                 <div class="form-group">
+                   <label for="name">Nome:</label>
+                   <input type="text" class="form-control" id="name" name="name">
+                 </div>
+                 <div class="form-group">
+                   <label for="comment">Mensagem:</label>
+                   <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+                 </div>
+                 <input type="button" class="btn btn-default" value="Enviar" 
+                    onclick="beforeSubmit();">
+               </form> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <% include ./partials/footer %>
+    </footer>
+  </body>
+</html>
