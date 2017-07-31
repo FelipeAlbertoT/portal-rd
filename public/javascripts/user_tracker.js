@@ -1,5 +1,5 @@
-//var userTrackerURL = "http://localhost:3000/api/v1/users";
-var userTrackerURL = "https://serene-temple-33600.herokuapp.com/api/v1/users";
+var userTrackerURL = "http://localhost:3000/api/v1/users";
+//var userTrackerURL = "https://serene-temple-33600.herokuapp.com/api/v1/users";
 
 function sendVisitedPagesToUserTrackerApplication() {
   var user_name = "";
